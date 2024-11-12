@@ -1,5 +1,7 @@
 class Student:
     school_name = "Weber State University"  # Class attribute shared by all instances
+    all_students = [] #xlass attribute to store all instances
+
     #constructor initializer
     #attributes
     def __init__(self, first_name, last_name, grade, student_id=None):
@@ -8,6 +10,9 @@ class Student:
         self.grade = grade
         self.student_id = self.format_student_id(student_id)
         self.email = first_name + last_name + '@weber.edu'
+
+         # Add each instance to the all_students list
+        Student.all_students.append(self)
     
     # Class method to create a student from a single name string
     # The @classmethod decorator in Python defines a method that belongs to the class itself, 
@@ -53,6 +58,11 @@ class Student:
     def format_student_id(student_id):
         # Format student ID with a leading "STU-" prefix if it exists
         return f"WSU-{student_id}" if student_id else "No ID assigned"
+    
+    @classmethod
+    def get_all_students(cls):
+        # Class method to access the list of all students
+        return cls.all_students
 
         
 #jay_pike is an instance of the student class
@@ -78,3 +88,7 @@ print(waldo_wildcat)
 
 print(Student.is_valid_email("test@weber.edu"))  # True
 print(Student.is_valid_email("invalid-email"))    # False
+
+all_students = Student.get_all_students()
+for student in all_students:
+    student.print_student_data()
