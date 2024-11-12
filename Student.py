@@ -1,4 +1,5 @@
 class Student:
+    school_name = "Weber State University"  # Class attribute shared by all instances
     #constructor initializer
     #attributes
     def __init__(self, first_name, last_name, grade):
@@ -12,7 +13,8 @@ class Student:
                f"\tFirst Name: {self.first_name} \n",
                f"\tLast Name: {self.last_name} \n",
                f"\tGrade: {self.grade}\n",
-               f"\tEmail: {self.email}")
+               f"\tEmail: {self.email}",
+               f"\tSchool: {Student.school_name}")
     
     def change_grade(self, new_grade_level):
         self.grade = new_grade_level
