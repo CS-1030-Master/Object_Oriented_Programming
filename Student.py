@@ -8,6 +8,13 @@ class Student:
         self.grade = grade
         self.email = first_name + last_name + '@weber.edu'
     
+    # Class method to create a student from a single name string
+    # The @classmethod decorator in Python defines a method that belongs to the class itself, rather than to instances of the class. A classmethod takes the class (cls) as its first parameter, instead of an instance (self), allowing it to access and modify class-level data or create instances in alternative ways.
+    @classmethod
+    def from_full_name(cls, full_name, grade):
+        first_name, last_name = full_name.split()
+        return cls(first_name, last_name, grade)
+
     def print_student_data(self):
         print (f"Student info \n",
                f"\tFirst Name: {self.first_name} \n",
