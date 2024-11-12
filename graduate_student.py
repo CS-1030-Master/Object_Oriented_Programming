@@ -1,4 +1,9 @@
 # graduate_student.py
+# Inheritance allows a class to inherit attributes and methods from another class.
+# Here, GraduateStudent inherits from Student, gaining its attributes and methods.
+# GraduateStudent can use Student's methods directly or override them to provide 
+# more specialized behavior, demonstrating code reuse and extension of functionality.
+
 
 from student import Student
 
