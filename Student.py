@@ -18,6 +18,13 @@ class Student:
     
     def change_grade(self, new_grade_level):
         self.grade = new_grade_level
+    
+    def __str__(self):
+        # The __str__ method provides a user-friendly string representation of the object.
+        # This is called when we use print() on an instance of the class.
+        return (f"Student: {self.first_name} {self.last_name}, "
+            f"Grade: {self.grade}, Email: {self.email}")
+
         
 #jay_pike is an instance of the student class
 jay_pike = Student("Jay", "Pike", "Sophomore") #Object of the student class
@@ -35,3 +42,7 @@ waldo_wildcat.change_grade("Freshman")
 jay_pike.print_student_data()
 jane_doe.print_student_data()
 waldo_wildcat.print_student_data()
+
+print(jay_pike)
+print(jane_doe)
+print(waldo_wildcat)
